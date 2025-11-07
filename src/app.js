@@ -9,4 +9,6 @@ app.use(cookieParser());
 
 app.get("/health", (_, res) => res.json({ ok: true }));
 
+const { errorHandler } = require("./middleware/error");
+app.use(errorHandler);
 module.exports = { app };
